@@ -84,15 +84,15 @@ class TestListPresenter {
     func startUpdateTestList(_ newTestList: [StartTestModel]) {
         (parentVC as? TestListViewController)?.stopLoader()
         for model in newTestList {
-            for index in 0 ..< tests.count {
-                if model.catid == tests[index].catid {
-                    if model.quid == self.startTestModel?.quid {
+            if model.quid == startTestModel?.quid {
+                for index in 0 ..< tests.count {
+                    if tests[index].catid == startTestModel?.catid {
                         tests[index].isValid = model.passed
                         break
                     }
                 }
             }
-            (parentVC as? TestListViewController)?.reload()
         }
+        (parentVC as? TestListViewController)?.reload()
     }
 }

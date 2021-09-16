@@ -28,7 +28,7 @@ class TestListCell: UITableViewCell {
     func setup(_ model: TestListModel) {
         titleLabel.text = model.categoryName
         
-        if !model.isValid {
+        if model.isValid {
             imgView.image = UIImage(named: "success_test")
         } else {
             imgView.image = UIImage(named: "next_test")

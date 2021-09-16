@@ -25,7 +25,7 @@ class TakingTestInteractor {
         request.setValue(tokenModel.tokenType + " " + tokenModel.token, forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+            guard let data = data, error == nil else {                                                 
                 print("error=\(String(describing: error))")
                 DispatchQueue.main.async {
                     self.presenter?.showAlert(String(describing: error))
@@ -33,7 +33,7 @@ class TakingTestInteractor {
                 return
             }
             
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(String(describing: response))")
                 DispatchQueue.main.async {
@@ -64,7 +64,7 @@ class TakingTestInteractor {
         request.setValue(model.tokenType + " " + model.token, forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+            guard let data = data, error == nil else {                                                 
                 print("error=\(String(describing: error))")
                 DispatchQueue.main.async {
                     self.presenter?.showAlert(String(describing: error))
@@ -72,7 +72,7 @@ class TakingTestInteractor {
                 return
             }
             
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(String(describing: response))")
                 DispatchQueue.main.async {
@@ -106,7 +106,7 @@ class TakingTestInteractor {
         request.setValue(model.tokenType + " " + model.token, forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+            guard let data = data, error == nil else {                                                 
                 print("error=\(String(describing: error))")
                 DispatchQueue.main.async {
                     self.presenter?.showAlert(String(describing: error))
@@ -114,7 +114,7 @@ class TakingTestInteractor {
                 return
             }
             
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(String(describing: response))")
                 DispatchQueue.main.async {
@@ -155,7 +155,7 @@ class TakingTestInteractor {
             ]
             request.httpBody = makeHttpBody(parameters: parameters)
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                guard error == nil else {                                                 // check for fundamental networking error
+                guard error == nil else {                                                 
                     print("error=\(String(describing: error))")
                     DispatchQueue.main.async {
                         self.presenter?.showAlert(String(describing: error))
@@ -163,7 +163,7 @@ class TakingTestInteractor {
                     return
                 }
                 
-                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 && httpStatus.statusCode != 204 {           // check for http errors
+                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 && httpStatus.statusCode != 204 {           
                     print("statusCode should be 200, but is \(httpStatus.statusCode)")
                     print("response = \(String(describing: response))")
                     DispatchQueue.main.async {
@@ -193,7 +193,7 @@ class TakingTestInteractor {
         request.setValue(model.tokenType + " " + model.token, forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+            guard let data = data, error == nil else {                                                 
                 print("error=\(String(describing: error))")
                 DispatchQueue.main.async {
                     self.presenter?.showAlert(String(describing: error))
@@ -201,7 +201,7 @@ class TakingTestInteractor {
                 return
             }
             
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(String(describing: response))")
                 DispatchQueue.main.async {

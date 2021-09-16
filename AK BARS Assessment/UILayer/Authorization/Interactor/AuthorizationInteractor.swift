@@ -19,11 +19,11 @@ class AuthorizationInteractor {
         request.httpMethod = "POST"
         let parameters: [String: Any] = [
             "username": login,
-            "hashedPassword": "fb81ff7afe59de1c8332f66b243cd034cb290fcc196248b65ce3939e7e50c146"
+            "hashedPassword": password
         ]
         request.httpBody = makeHttpBody(parameters: parameters)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard error == nil else {                                                 // check for fundamental networking error
+            guard error == nil else {                                                 
                 print("error=\(String(describing: error))")
                 DispatchQueue.main.async {
                     self.presenter?.showAlert(String(describing: error))
@@ -31,14 +31,14 @@ class AuthorizationInteractor {
                 return
             }
             
-//            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-//                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-//                print("response = \(String(describing: response))")
-//                DispatchQueue.main.async {
-//                    self.presenter?.showAlert("\(String(describing: response)) \(httpStatus.statusCode)")
-//                }
-//                return
-//            }
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(String(describing: response))")
+                DispatchQueue.main.async {
+                    self.presenter?.showAlert("\(String(describing: response)) \(httpStatus.statusCode)")
+                }
+                return
+            }
             
             DispatchQueue.main.async {
                 self.presenter?.showTestList()
