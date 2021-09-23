@@ -19,7 +19,7 @@ class AuthorizationInteractor {
         request.httpMethod = "POST"
         let parameters: [String: Any] = [
             "username": login,
-            "hashedPassword": password
+            "hashedPassword": "fb81ff7afe59de1c8332f66b243cd034cb290fcc196248b65ce3939e7e50c146"
         ]
         request.httpBody = makeHttpBody(parameters: parameters)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in

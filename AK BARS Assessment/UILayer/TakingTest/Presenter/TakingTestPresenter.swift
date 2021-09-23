@@ -20,10 +20,7 @@ class TakingTestPresenter {
     private var allAnswersExecute: [AnswerExecuteModel] = []
     private var parentVC: UIViewController = UIViewController()
     
-    func getallResultAnswers(_ answers: [AnswersResultModel]) {
-        (parentVC as? TakingTestViewController)?.stopLoader()
-        self.allResultAnswers = answers
-        
+    private func getallResultAnswers() {
         for index in 0 ..< allResultAnswers.count {
             for executeAnswer in allAnswersExecute {
                 if quid == allResultAnswers[index].quid && allResultAnswers[index].qid == executeAnswer.questionId && allResultAnswers[index].aid == executeAnswer.answerId && executeAnswer.answerChecked {
@@ -53,10 +50,25 @@ class TakingTestPresenter {
         parentVC.showAlert(title: "Что - то пошло не так", msg: text, buttonText: "Понятно", handler: nil)
     }
     
-    func setQuestionsAndAnswers(questions: [QuestionModel], allAnswwers: [[AnswerModel]]) {
+    func setQuestionsAndAnswers(questions: [QuestionModel], allAnswers: [[AnswerModel]], allResultAnswers: [AnswersResultModel]) {
         (parentVC as? TakingTestViewController)?.stopLoader()
         self.questions = questions
-        self.allAnswers = allAnswwers
+        self.allAnswers = allAnswers
+        self.allResultAnswers = allResultAnswers
+        
+        var tmpAllAnswers: [[AnswerModel]] = []
+        for answers in self.allAnswers {
+            var tmpAnswers: [AnswerModel] = []
+            for answer in answers {
+                for resultAnswer in allResultAnswers {
+                    if resultAnswer.aid == answer.aid {
+                        tmpAnswers.append(answer)
+                    }
+                }
+            }
+            tmpAllAnswers.append(tmpAnswers)
+        }
+        self.allAnswers = tmpAllAnswers
         self.getAllAnswers()
         (parentVC as? TakingTestViewController)?.setup()
         (parentVC as? TakingTestViewController)?.reload()
@@ -123,8 +135,7 @@ class TakingTestPresenter {
         
         let newRespondedQuestionIds = Array(Set(respondedQuestionIds))
         if newRespondedQuestionIds.count == allQuestionIds.count {
-            (parentVC as? TakingTestViewController)?.startLoader()
-            interactor.getAnswersByQuestionnaire(quid: quid)
+           getallResultAnswers()
             return true
         }
         return false

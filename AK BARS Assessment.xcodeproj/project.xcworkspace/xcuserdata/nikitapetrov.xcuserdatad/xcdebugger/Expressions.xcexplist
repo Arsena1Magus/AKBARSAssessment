@@ -14,6 +14,9 @@
          contextName = "closure #1 in TestListInteractor.getClientByLogin():TestListInteractor.swift">
       </ContextState>
       <ContextState
+         contextName = "TakingTestPresenter.setQuestionsAndAnswers(questions:allAnswers:allResultAnswers:):TakingTestPresenter.swift">
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in TestListInteractor.getCategories():TestListInteractor.swift">
          <PersistentStrings>
             <PersistentString
@@ -28,15 +31,15 @@
          contextName = "TakingTestViewController.tapBackButton():TakingTestViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "closure #1 in TakingTestInteractor.getAnswers(quid:):TakingTestInteractor.swift">
-      </ContextState>
-      <ContextState
          contextName = "TakingTestViewController.tableView(_:cellForRowAt:):TakingTestViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "indexPath.row">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in TakingTestInteractor.getAnswers(quid:):TakingTestInteractor.swift">
       </ContextState>
       <ContextState
          contextName = "closure #4 in closure #1 in TakingTestInteractor.getAnswers(quid:):TakingTestInteractor.swift">
@@ -57,6 +60,14 @@
       </ContextState>
       <ContextState
          contextName = "TakingTestViewController.tapNextButton():TakingTestViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in TakingTestInteractor.getAnswersByQuestionnaire(quid:):TakingTestInteractor.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "quid">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "closure #1 in TestListInteractor.getToken():TestListInteractor.swift">
