@@ -24,7 +24,7 @@ class TestListPresenter {
     
     func didSelectRow(_ row: Int) {
         if row < tests.count {
-            if tests[row].isValid {
+            if !tests[row].isValid {
                 selectedTest = tests[row]
                 if let test = selectedTest {
                     (parentVC as? TestListViewController)?.startLoader()
