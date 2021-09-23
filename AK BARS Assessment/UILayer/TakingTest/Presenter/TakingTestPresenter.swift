@@ -20,10 +20,7 @@ class TakingTestPresenter {
     private var allAnswersExecute: [AnswerExecuteModel] = []
     private var parentVC: UIViewController = UIViewController()
     
-    func getallResultAnswers(_ answers: [AnswersResultModel]) {
-        (parentVC as? TakingTestViewController)?.stopLoader()
-        self.allResultAnswers = answers
-        
+    private func getallResultAnswers() {
         for index in 0 ..< allResultAnswers.count {
             for executeAnswer in allAnswersExecute {
                 if quid == allResultAnswers[index].quid && allResultAnswers[index].qid == executeAnswer.questionId && allResultAnswers[index].aid == executeAnswer.answerId && executeAnswer.answerChecked {
@@ -39,12 +36,12 @@ class TakingTestPresenter {
     
     func showResultPage(_ result: Bool, cid: Int) {
         self.cid = cid
-        (parentVC as? TakingTestViewController)?.stopLoader()
         let storyBoard: UIStoryboard = UIStoryboard(name: "ResultPageViewController", bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "ResultPageViewController") as! ResultPageViewController
         vc.modalPresentationStyle = .fullScreen
         vc.isSuccessResultPage = result
         vc.parentPresenter = self
+        (parentVC as? TakingTestViewController)?.stopLoader()
         parentVC.present(vc, animated: false, completion: nil)
     }
     
@@ -53,13 +50,36 @@ class TakingTestPresenter {
         parentVC.showAlert(title: "Что - то пошло не так", msg: text, buttonText: "Понятно", handler: nil)
     }
     
+    func setResultAnswers(answers: [AnswersResultModel]) {
+        (parentVC as? TakingTestViewController)?.stopLoader()
+        self.allResultAnswers = answers
+        
+        var tmpAllAnswers: [[AnswerModel]] = []
+        for answers in allAnswers {
+            var tmpAnswers: [AnswerModel] = []
+            for answer in answers {
+                for resultAnswer in allResultAnswers {
+                    if answer.aid == resultAnswer.aid {
+                        tmpAnswers.append(answer)
+                        break
+                    }
+                }
+            }
+            tmpAllAnswers.append(tmpAnswers)
+        }
+        self.allAnswers = tmpAllAnswers
+        self.getAllAnswers()
+        (parentVC as? TakingTestViewController)?.setup()
+        (parentVC as? TakingTestViewController)?.reload()
+    }
+    
     func setQuestionsAndAnswers(questions: [QuestionModel], allAnswwers: [[AnswerModel]]) {
         (parentVC as? TakingTestViewController)?.stopLoader()
         self.questions = questions
         self.allAnswers = allAnswwers
-        self.getAllAnswers()
-        (parentVC as? TakingTestViewController)?.setup()
-        (parentVC as? TakingTestViewController)?.reload()
+        
+        (parentVC as? TakingTestViewController)?.startLoader()
+        interactor.getAnswersByQuestionnaire(quid: quid)
     }
     
     func getQuestions(parentVC: UIViewController) {
@@ -123,8 +143,7 @@ class TakingTestPresenter {
         
         let newRespondedQuestionIds = Array(Set(respondedQuestionIds))
         if newRespondedQuestionIds.count == allQuestionIds.count {
-            (parentVC as? TakingTestViewController)?.startLoader()
-            interactor.getAnswersByQuestionnaire(quid: quid)
+            self.getallResultAnswers()
             return true
         }
         return false

@@ -57,7 +57,7 @@ class TakingTestInteractor {
         task.resume()
     }
     
-    func getAnswers(quid: Int) {
+    private func getAnswers(quid: Int) {
         guard let model = self.tokenModel, let url = URL(string: Constants.ApiServers.mainServer + "Answers/GetQuestionAnswers/\(quid)") else { return }
         var request = URLRequest(url: url)
         request.setValue("text/plain", forHTTPHeaderField: "accept")
@@ -127,7 +127,7 @@ class TakingTestInteractor {
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]] {
                     self.allResultAnswers = json.compactMap { AnswersResultModel(json: $0)}
                     DispatchQueue.main.async {
-                        self.presenter?.getallResultAnswers(self.allResultAnswers)
+                        self.presenter?.setResultAnswers(answers: self.allResultAnswers)
                     }
                 }
             } catch {
