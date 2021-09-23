@@ -21,9 +21,6 @@ class TestListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        if #available(iOS 13.0, *) {
-            self.overrideUserInterfaceStyle = .light
-        } 
         view.backgroundColor = .white
         titleLabel.text = "Для возможности использования инструмента пройдите тест"
         setupTableView()

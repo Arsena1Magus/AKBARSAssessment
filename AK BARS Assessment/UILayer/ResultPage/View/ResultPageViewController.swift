@@ -41,10 +41,6 @@ class ResultPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if #available(iOS 13.0, *) {
-            self.overrideUserInterfaceStyle = .light
-        }
-        
         if isSuccessResultPage {
             titleLabel.text = "Тест пройден"
             descriptionLabel.text = "Со следующего рабочего дня Вам будет открыта возможность работы с <Раздел>"
