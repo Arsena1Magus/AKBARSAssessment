@@ -34,7 +34,7 @@ class TakingTestPresenter {
         interactor.updateAnswers(allResultAnswers, quidid: allResultAnswers[0].quidid, quid: quid)
     }
     
-    func showResultPage(_ result: Bool, cid: Int) {
+    func showResultPage(_ result: Bool, cid: Int, catid: Int) {
         self.cid = cid
         let storyBoard: UIStoryboard = UIStoryboard(name: "ResultPageViewController", bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "ResultPageViewController") as! ResultPageViewController
@@ -68,7 +68,20 @@ class TakingTestPresenter {
             }
             tmpAllAnswers.append(tmpAnswers)
         }
-        self.allAnswers = tmpAllAnswers.sorted(by: {$0[0].qid < $1[0].qid })
+        self.allAnswers = tmpAllAnswers
+        tmpAllAnswers = []
+        
+        for question in questions {
+            for answers in self.allAnswers {
+                for answer in answers {
+                    if question.qid == answer.qid {
+                        tmpAllAnswers.append(answers)
+                        break
+                    }
+                }
+            }
+        }
+        self.allAnswers = tmpAllAnswers
         self.getAllAnswers()
         (parentVC as? TakingTestViewController)?.setup()
         (parentVC as? TakingTestViewController)?.reload()

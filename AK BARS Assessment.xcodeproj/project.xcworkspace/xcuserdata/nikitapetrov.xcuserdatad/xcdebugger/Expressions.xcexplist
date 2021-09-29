@@ -3,46 +3,15 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "TakingTestPresenter.didSelectRow(_:currentStep:):TakingTestPresenter.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "allAnswers[questionId][row]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "closure #1 in TestListInteractor.getClientByLogin():TestListInteractor.swift">
       </ContextState>
       <ContextState
-         contextName = "TakingTestPresenter.setQuestionsAndAnswers(questions:allAnswers:allResultAnswers:):TakingTestPresenter.swift">
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in TestListInteractor.getCategories():TestListInteractor.swift">
+         contextName = "TestListPresenter.didSelectRow(_:):TestListPresenter.swift">
          <PersistentStrings>
             <PersistentString
-               value = "httpStatus.statusCode">
-            </PersistentString>
-            <PersistentString
-               value = "try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]">
+               value = "test.catid">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "TakingTestViewController.tapBackButton():TakingTestViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "TakingTestViewController.tableView(_:cellForRowAt:):TakingTestViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "indexPath.row">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in TakingTestInteractor.getAnswers(quid:):TakingTestInteractor.swift">
-      </ContextState>
-      <ContextState
-         contextName = "closure #4 in closure #1 in TakingTestInteractor.getAnswers(quid:):TakingTestInteractor.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in TakingTestInteractor.updateAnswers(_:quidid:quid:):TakingTestInteractor.swift">
@@ -56,10 +25,34 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "TakingTestPresenter.getallResultAnswers(_:):TakingTestPresenter.swift">
+         contextName = "closure #1 in TakingTestInteractor.getAnswers(quid:):TakingTestInteractor.swift">
       </ContextState>
       <ContextState
-         contextName = "TakingTestViewController.tapNextButton():TakingTestViewController.swift">
+         contextName = "TakingTestViewController.tapBackButton():TakingTestViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "TakingTestViewController.tableView(_:cellForRowAt:):TakingTestViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ResultPageViewController.tapOnMainButton():ResultPageViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TakingTestPresenter.didSelectRow(_:currentStep:):TakingTestPresenter.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "allAnswers[questionId][row]">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "closure #1 in TakingTestInteractor.getAnswersByQuestionnaire(quid:):TakingTestInteractor.swift">
@@ -70,21 +63,35 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in TestListInteractor.getToken():TestListInteractor.swift">
+         contextName = "TakingTestPresenter.getQuestions(parentVC:):TakingTestPresenter.swift">
          <PersistentStrings>
             <PersistentString
-               value = "httpStatus.statusCode">
+               value = "quid">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in TakingTestInteractor.getQuestions(quid:tokenModel:):TakingTestInteractor.swift">
+         contextName = "closure #4 in closure #1 in TakingTestInteractor.getAnswers(quid:):TakingTestInteractor.swift">
       </ContextState>
       <ContextState
-         contextName = "ResultPageViewController.tapOnMainButton():ResultPageViewController.swift">
+         contextName = "closure #1 in TakingTestInteractor.getQuestions(quid:tokenModel:):TakingTestInteractor.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.navigationController">
+               value = "self.questions">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TakingTestViewController.tapNextButton():TakingTestViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "TakingTestPresenter.setResultAnswers(answers:):TakingTestPresenter.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in TestListInteractor.getToken():TestListInteractor.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "httpStatus.statusCode">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -97,10 +104,27 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "TakingTestPresenter.setQuestionsAndAnswers(questions:allAnswers:allResultAnswers:):TakingTestPresenter.swift">
+      </ContextState>
+      <ContextState
+         contextName = "TakingTestPresenter.getallResultAnswers(_:):TakingTestPresenter.swift">
+      </ContextState>
+      <ContextState
          contextName = "TakingTestViewController.tableView(_:numberOfRowsInSection:):TakingTestViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "presenter.numberOfRowInSection(currentStep - 1)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in TestListInteractor.getCategories():TestListInteractor.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "httpStatus.statusCode">
+            </PersistentString>
+            <PersistentString
+               value = "try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
