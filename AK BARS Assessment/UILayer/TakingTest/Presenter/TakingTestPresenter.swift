@@ -55,12 +55,13 @@ class TakingTestPresenter {
         self.allResultAnswers = answers
         
         var tmpAllAnswers: [[AnswerModel]] = []
-        for answers in allAnswers {
+        for i in 0..<allAnswers.count {
             var tmpAnswers: [AnswerModel] = []
-            for answer in answers {
+            for j in 0..<allAnswers[i].count {
                 for resultAnswer in allResultAnswers {
-                    if answer.aid == resultAnswer.aid {
-                        tmpAnswers.append(answer)
+                    if allAnswers[i][j].aid == resultAnswer.aid {
+                        allAnswers[i][j].isValid = false
+                        tmpAnswers.append(allAnswers[i][j])
                         break
                     }
                 }
@@ -93,7 +94,7 @@ class TakingTestPresenter {
     func getAllAnswers() {
         for index in 0 ..< questions.count {
             for answer in allAnswers[index] {
-                let answerModel = AnswerExecuteModel(questionId: questions[index].qid, answerId: answer.aid, answerChecked: !answer.isValid)
+                let answerModel = AnswerExecuteModel(questionId: questions[index].qid, answerId: answer.aid, answerChecked: answer.isValid)
                 allAnswersExecute.append(answerModel)
             }
         }
