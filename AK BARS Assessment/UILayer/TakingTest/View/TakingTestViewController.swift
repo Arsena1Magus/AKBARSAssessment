@@ -40,19 +40,8 @@ class TakingTestViewController: UIViewController {
             backButton.tintColor = lightGrayText
         }
     }
-    @IBOutlet private var questionLabel: UILabel! {
-        didSet {
-            questionLabel.textColor = .black
-        }
-    }
-    @IBOutlet private var descriptionLabel: UILabel! {
-        didSet {
-            descriptionLabel.textColor = lightGrayText
-        }
-    }
     @IBOutlet private var loader: UIActivityIndicatorView!
     @IBOutlet private var tableView: UITableView!
-    @IBOutlet private var contentViewHeightConstraint: NSLayoutConstraint!
     
     @IBAction private func tapNavButton() {
         self.dismiss(animated: false, completion: nil)
@@ -67,7 +56,6 @@ class TakingTestViewController: UIViewController {
         progressView.setProgress(progressStep / 100, animated: true)
         setStep(currentStep)
         
-        questionLabel.text = presenter.setQuestion(currentStep - 1)
         tableView.reloadData()
     }
     
@@ -86,7 +74,6 @@ class TakingTestViewController: UIViewController {
             progressView.setProgress(progressStep / 100, animated: true)
             setStep(currentStep)
             
-            questionLabel.text = presenter.setQuestion(currentStep - 1)
             tableView.reloadData()
         }
     }
@@ -127,8 +114,6 @@ class TakingTestViewController: UIViewController {
         progressView.setProgress(progressStep / 100, animated: false)
         
         navTitleLabel.text = testName
-        descriptionLabel.text = "Выберите один или несколько вариантов ответа"
-        questionLabel.text = presenter.setQuestion(currentStep - 1)
         navImage.image = UIImage(named: "close_black")
         setupTableView()
         setStep(currentStep)
@@ -155,13 +140,31 @@ class TakingTestViewController: UIViewController {
         tableView.dataSource = self
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none
-        self.tableView.register(UINib(nibName: String(describing: TestListCell.self), bundle: nil), forCellReuseIdentifier: TestListCell.reuseIdentifier)
+        tableView.estimatedSectionHeaderHeight = UITableView.automaticDimension
+        
+        tableView.register(UINib(nibName: String(describing: TakingTestHeaderView.self), bundle: nil),
+             forHeaderFooterViewReuseIdentifier: "TakingTestHeaderView")
+        tableView.register(UINib(nibName: String(describing: TestListCell.self), bundle: nil), forCellReuseIdentifier: TestListCell.reuseIdentifier)
     }
 }
 
 extension TakingTestViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.numberOfRowInSection(currentStep - 1)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
+                                                                    "TakingTestHeaderView") as? TakingTestHeaderView else {
+            return nil
+        }
+        view.questionLabel.text = presenter.setQuestion(currentStep - 1)
+        view.descriptionLabel.text = presenter.setDescriptionText(currentStep - 1)
+        return view
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

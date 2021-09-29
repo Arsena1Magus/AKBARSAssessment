@@ -16,6 +16,13 @@
 		716C075726E6812100B11234 /* TakingTestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C075626E6812100B11234 /* TakingTestPresenter.swift */; };
 		716C075926E68DA200B11234 /* QuestionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716C075826E68DA200B11234 /* QuestionsModel.swift */; };
 		716D910026E7CD0D00973420 /* AnswerExecuteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716D90FF26E7CD0D00973420 /* AnswerExecuteModel.swift */; };
+		717ECFE72704A00400D8A23D /* TakingTestHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717ECFE62704A00300D8A23D /* TakingTestHeaderView.swift */; };
+		717ECFEB2704A63D00D8A23D /* TakingTestHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 717ECFEA2704A63D00D8A23D /* TakingTestHeaderView.xib */; };
+		717ECFED2704AB5200D8A23D /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7182371126E1403600113E99 /* SF-Pro-Display-Medium.otf */; };
+		717ECFEE2704AB5200D8A23D /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7182370D26E1403600113E99 /* SF-Pro-Display-Regular.otf */; };
+		717ECFEF2704AB5200D8A23D /* SF-Pro-Display-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7182370E26E1403600113E99 /* SF-Pro-Display-RegularItalic.otf */; };
+		717ECFF02704AB5200D8A23D /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7182370F26E1403600113E99 /* SF-Pro-Display-Semibold.otf */; };
+		717ECFF12704AB5200D8A23D /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7182371026E1403600113E99 /* SF-Pro-Display-Light.otf */; };
 		718236B826E13DBB00113E99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718236B726E13DBB00113E99 /* AppDelegate.swift */; };
 		718236BA26E13DBB00113E99 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718236B926E13DBB00113E99 /* SceneDelegate.swift */; };
 		718236C426E13DBD00113E99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 718236C226E13DBD00113E99 /* LaunchScreen.storyboard */; };
@@ -52,6 +59,8 @@
 		716C075626E6812100B11234 /* TakingTestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakingTestPresenter.swift; sourceTree = "<group>"; };
 		716C075826E68DA200B11234 /* QuestionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsModel.swift; sourceTree = "<group>"; };
 		716D90FF26E7CD0D00973420 /* AnswerExecuteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerExecuteModel.swift; sourceTree = "<group>"; };
+		717ECFE62704A00300D8A23D /* TakingTestHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakingTestHeaderView.swift; sourceTree = "<group>"; };
+		717ECFEA2704A63D00D8A23D /* TakingTestHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TakingTestHeaderView.xib; sourceTree = "<group>"; };
 		718236B426E13DBB00113E99 /* AK BARS Assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AK BARS Assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		718236B726E13DBB00113E99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		718236B926E13DBB00113E99 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +138,15 @@
 				716C075626E6812100B11234 /* TakingTestPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		717ECFE527049FE100D8A23D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				717ECFE62704A00300D8A23D /* TakingTestHeaderView.swift */,
+				717ECFEA2704A63D00D8A23D /* TakingTestHeaderView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		718236AB26E13DBB00113E99 = {
@@ -358,6 +376,7 @@
 		7182371726E149D500113E99 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				717ECFE527049FE100D8A23D /* Views */,
 				7182371E26E14EA000113E99 /* Cells */,
 				7182371826E149E800113E99 /* TestListViewController.swift */,
 				7182371A26E14A0900113E99 /* TestListViewController.storyboard */,
@@ -439,12 +458,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				717ECFF02704AB5200D8A23D /* SF-Pro-Display-Semibold.otf in Resources */,
 				718236DF26E13ED400113E99 /* Assets.xcassets in Resources */,
 				7182372426E1525600113E99 /* TestListCell.xib in Resources */,
 				7182370C26E13F6B00113E99 /* AuthorizationViewController.storyboard in Resources */,
+				717ECFF12704AB5200D8A23D /* SF-Pro-Display-Light.otf in Resources */,
+				717ECFEB2704A63D00D8A23D /* TakingTestHeaderView.xib in Resources */,
 				718236C426E13DBD00113E99 /* LaunchScreen.storyboard in Resources */,
 				7182371B26E14A0900113E99 /* TestListViewController.storyboard in Resources */,
+				717ECFED2704AB5200D8A23D /* SF-Pro-Display-Medium.otf in Resources */,
 				716C075326E6744700B11234 /* TakingTestViewController.storyboard in Resources */,
+				717ECFEF2704AB5200D8A23D /* SF-Pro-Display-RegularItalic.otf in Resources */,
+				717ECFEE2704AB5200D8A23D /* SF-Pro-Display-Regular.otf in Resources */,
 				7182370826E13F6B00113E99 /* ResultPageViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,6 +490,7 @@
 				7168247726EFC5CE002C222B /* StartTestModel.swift in Sources */,
 				716C075526E6745700B11234 /* TakingTestViewController.swift in Sources */,
 				7182370926E13F6B00113E99 /* AuthorizationPresenter.swift in Sources */,
+				717ECFE72704A00400D8A23D /* TakingTestHeaderView.swift in Sources */,
 				7182371D26E14E0600113E99 /* TestListModel.swift in Sources */,
 				7182370B26E13F6B00113E99 /* AuthorizationViewController.swift in Sources */,
 				716D910026E7CD0D00973420 /* AnswerExecuteModel.swift in Sources */,

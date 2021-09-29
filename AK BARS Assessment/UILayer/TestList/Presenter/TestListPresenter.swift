@@ -30,6 +30,8 @@ class TestListPresenter {
                     (parentVC as? TestListViewController)?.startLoader()
                     interactor.startTest(catid: test.catid)
                 }
+            } else {
+                parentVC.showAlert(title: "", msg: "Тест пройден", buttonText: "Понятно", handler: nil)
             }
         }
     }

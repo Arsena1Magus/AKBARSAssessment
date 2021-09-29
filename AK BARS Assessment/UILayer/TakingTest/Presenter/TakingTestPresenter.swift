@@ -68,7 +68,7 @@ class TakingTestPresenter {
             }
             tmpAllAnswers.append(tmpAnswers)
         }
-        self.allAnswers = tmpAllAnswers
+        self.allAnswers = tmpAllAnswers.sorted(by: {$0[0].qid < $1[0].qid })
         self.getAllAnswers()
         (parentVC as? TakingTestViewController)?.setup()
         (parentVC as? TakingTestViewController)?.reload()
@@ -175,5 +175,12 @@ class TakingTestPresenter {
     func dismiss() {
         parentVC.dismiss(animated: false, completion: nil)
         parentPresenter.updateTestList(cid: self.cid)
+    }
+    
+    func setDescriptionText(_ currentStep: Int) -> String {
+        if questions[currentStep].bid == 12 {
+            return "Выберите один из вариантов ответа"
+        }
+        return "Выберите один или несколько вариантов ответа"
     }
 }

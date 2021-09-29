@@ -43,7 +43,7 @@ class ResultPageViewController: UIViewController {
         
         if isSuccessResultPage {
             titleLabel.text = "Тест пройден"
-            descriptionLabel.text = "Со следующего рабочего дня Вам будет открыта возможность работы с <Раздел>"
+            descriptionLabel.text = "Со следующего рабочего дня Вам будет открыта возможность работы со следующим разделом"
             view.backgroundColor = successColor
             resultImage.image = UIImage(named: "success_icon")
         } else {
