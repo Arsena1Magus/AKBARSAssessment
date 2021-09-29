@@ -34,7 +34,7 @@ class TakingTestPresenter {
         interactor.updateAnswers(allResultAnswers, quidid: allResultAnswers[0].quidid, quid: quid)
     }
     
-    func showResultPage(_ result: Bool, cid: Int, catid: Int) {
+    func showResultPage(_ result: Bool, cid: Int) {
         self.cid = cid
         let storyBoard: UIStoryboard = UIStoryboard(name: "ResultPageViewController", bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "ResultPageViewController") as! ResultPageViewController
