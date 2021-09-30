@@ -20,6 +20,18 @@
                value = "httpStatus.statusCode">
             </PersistentString>
             <PersistentString
+               value = "answers[countIterations].quid">
+            </PersistentString>
+            <PersistentString
+               value = "answers[countIterations].quid + answers[countIterations].qid + answers[countIterations].aid">
+            </PersistentString>
+            <PersistentString
+               value = "answers[countIterations].qid">
+            </PersistentString>
+            <PersistentString
+               value = "testquidid">
+            </PersistentString>
+            <PersistentString
                value = "countIterations">
             </PersistentString>
          </PersistentStrings>
@@ -96,6 +108,9 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #2 in closure #1 in TakingTestInteractor.updateAnswers(_:quid:):TakingTestInteractor.swift">
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in AuthorizationModel.getSignin(login:password:):AuthorizationModel.swift">
          <PersistentStrings>
             <PersistentString
@@ -107,6 +122,9 @@
          contextName = "TakingTestPresenter.setQuestionsAndAnswers(questions:allAnswers:allResultAnswers:):TakingTestPresenter.swift">
       </ContextState>
       <ContextState
+         contextName = "TakingTestPresenter.getallResultAnswers():TakingTestPresenter.swift">
+      </ContextState>
+      <ContextState
          contextName = "TakingTestPresenter.getallResultAnswers(_:):TakingTestPresenter.swift">
       </ContextState>
       <ContextState
@@ -116,6 +134,9 @@
                value = "presenter.numberOfRowInSection(currentStep - 1)">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #3 in closure #1 in TakingTestInteractor.getResult(quid:):TakingTestInteractor.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in TestListInteractor.getCategories():TestListInteractor.swift">

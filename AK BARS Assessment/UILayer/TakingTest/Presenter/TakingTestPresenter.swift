@@ -35,13 +35,13 @@ class TakingTestPresenter {
     }
     
     func showResultPage(_ result: Bool, cid: Int) {
+        (parentVC as? TakingTestViewController)?.stopLoader()
         self.cid = cid
         let storyBoard: UIStoryboard = UIStoryboard(name: "ResultPageViewController", bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "ResultPageViewController") as! ResultPageViewController
         vc.modalPresentationStyle = .fullScreen
         vc.isSuccessResultPage = result
         vc.parentPresenter = self
-        (parentVC as? TakingTestViewController)?.stopLoader()
         parentVC.present(vc, animated: false, completion: nil)
     }
     

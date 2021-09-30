@@ -140,14 +140,14 @@ class TakingTestInteractor {
     
     func updateAnswers(_ answers: [AnswersResultModel], quidid: Int, quid: Int) {
         if !answers.isEmpty {
-            guard let model = self.tokenModel, let url = URL(string: Constants.ApiServers.mainServer + "QuestionnaireDetails/SendQuestionnaireAnswer/\(quidid)") else { return }
+            guard let model = self.tokenModel, let url = URL(string: Constants.ApiServers.mainServer + "QuestionnaireDetails/SendQuestionnaireAnswer/\(answers[countIterations].quidid)") else { return }
             var request = URLRequest(url: url)
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.setValue("*/*", forHTTPHeaderField: "accept")
             request.setValue(model.tokenType + " " + model.token, forHTTPHeaderField: "Authorization")
             request.httpMethod = "PUT"
             let parameters: [String: Any] = [
-                "quidid": quidid,
+                "quidid": answers[countIterations].quidid,
                 "quid": answers[countIterations].quid,
                 "qid": answers[countIterations].qid,
                 "aid": answers[countIterations].aid,

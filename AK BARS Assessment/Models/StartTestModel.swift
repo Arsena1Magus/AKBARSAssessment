@@ -12,6 +12,7 @@ struct StartTestModel {
     var cid: Int = -1
     var catid: Int = -1
     var passed: Bool = false
+    var score: Int = -1
     
     init(json: [String: Any]) {
         if let quid = json["quid"] as? Int {
@@ -25,6 +26,9 @@ struct StartTestModel {
         }
         if let passed = json["passed"] as? Bool {
             self.passed = passed
+        }
+        if let score = json["score"] as? Int {
+            self.score = score
         }
     }
 }

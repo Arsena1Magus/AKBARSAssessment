@@ -20,5 +20,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4A74D8BC-55A6-4150-9C21-3BD00DDE6B91"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AK BARS Assessment/UILayer/TakingTest/Interactor/TakingTestInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
+            landmarkName = "getResult(quid:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4A74D8BC-55A6-4150-9C21-3BD00DDE6B91 - d4275bd73ba30732"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in AK_BARS_Assessment.TakingTestInteractor.getResult(quid: Swift.Int) -&gt; ()"
+                  moduleName = "AK BARS Assessment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nikitapetrov/AKBARSAssessment/AK%20BARS%20Assessment/UILayer/TakingTest/Interactor/TakingTestInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "217"
+                  endingLineNumber = "217"
+                  offsetFromSymbolStart = "3199">
+               </Location>
+               <Location
+                  uuid = "4A74D8BC-55A6-4150-9C21-3BD00DDE6B91 - a773701452eae18a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in AK_BARS_Assessment.TakingTestInteractor.getResult(quid: Swift.Int) -&gt; ()"
+                  moduleName = "AK BARS Assessment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nikitapetrov/AKBARSAssessment/AK%20BARS%20Assessment/UILayer/TakingTest/Interactor/TakingTestInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "218"
+                  endingLineNumber = "218"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
