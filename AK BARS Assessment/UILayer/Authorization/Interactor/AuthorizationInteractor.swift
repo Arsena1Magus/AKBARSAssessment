@@ -26,7 +26,7 @@ class AuthorizationInteractor {
             guard error == nil else {                                                 
                 print("error=\(String(describing: error))")
                 DispatchQueue.main.async {
-                    self.presenter?.showAlert(String(describing: error))
+                    self.presenter?.showAlert(title: "Что-то пошло не так", "Попробуйте позже")
                 }
                 return
             }
@@ -35,7 +35,11 @@ class AuthorizationInteractor {
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(String(describing: response))")
                 DispatchQueue.main.async {
-                    self.presenter?.showAlert("\(String(describing: response)) \(httpStatus.statusCode)")
+                    if httpStatus.statusCode == 400 {
+                        self.presenter?.showAlert(title: "Неверный логин или пароль", "")
+                    } else {
+                        self.presenter?.showAlert(title: "Что-то пошло не так", "Попробуйте позже")
+                    }
                 }
                 return
             }

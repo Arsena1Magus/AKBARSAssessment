@@ -29,8 +29,8 @@ class AuthorizationPresenter {
         parentVC.present(vc, animated: false, completion: nil)
     }
     
-    func showAlert(_ text: String) {
+    func showAlert(title: String, _ msg: String) {
         (parentVC as? AuthorizationViewController)?.stopLoader()
-        parentVC.showAlert(title: "Что - то пошло не так", msg: text, buttonText: "Понятно", handler: nil)
+        parentVC.showAlert(title: title, msg: msg, buttonText: "Понятно", handler: nil)
     }
 }

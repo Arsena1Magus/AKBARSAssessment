@@ -30,7 +30,7 @@ class TestListInteractor {
             guard let data = data, error == nil else {
                 print("error=\(String(describing: error))")
                 DispatchQueue.main.async {
-                    self.presenter?.showAlert(String(describing: error))
+                    self.presenter?.showAlert("Попробуйте позже")
                 }
                 return
             }
@@ -39,7 +39,7 @@ class TestListInteractor {
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(String(describing: response))")
                 DispatchQueue.main.async {
-                    self.presenter?.showAlert("\(String(describing: response)) \(httpStatus.statusCode)")
+                    self.presenter?.showAlert("Попробуйте позже")
                 }
                 return
             }
@@ -74,7 +74,7 @@ class TestListInteractor {
             guard let data = data, error == nil else {
                 print("error=\(String(describing: error))")
                 DispatchQueue.main.async {
-                    self.presenter?.showAlert(String(describing: error))
+                    self.presenter?.showAlert("Попробуйте позже")
                 }
                 return
             }
@@ -83,7 +83,7 @@ class TestListInteractor {
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(String(describing: response))")
                 DispatchQueue.main.async {
-                    self.presenter?.showAlert("\(String(describing: response)) \(httpStatus.statusCode)")
+                    self.presenter?.showAlert("Попробуйте позже")
                 }
                 return
             }
@@ -114,7 +114,7 @@ class TestListInteractor {
             guard let data = data, error == nil else {
                 print("error=\(String(describing: error))")
                 DispatchQueue.main.async {
-                    self.presenter?.showAlert(String(describing: error))
+                    self.presenter?.showAlert("Попробуйте позже")
                 }
                 return
             }
@@ -123,7 +123,7 @@ class TestListInteractor {
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(String(describing: response))")
                 DispatchQueue.main.async {
-                    self.presenter?.showAlert("\(String(describing: response)) \(httpStatus.statusCode)")
+                    self.presenter?.showAlert("Попробуйте позже")
                 }
                 return
             }
@@ -151,7 +151,7 @@ class TestListInteractor {
             guard let data = data, error == nil else {
                 print("error=\(String(describing: error))")
                 DispatchQueue.main.async {
-                    self.presenter?.showAlert(String(describing: error))
+                    self.presenter?.showAlert("Попробуйте позже")
                 }
                 return
             }
@@ -160,7 +160,7 @@ class TestListInteractor {
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(String(describing: response))")
                 DispatchQueue.main.async {
-                    self.presenter?.showAlert("\(String(describing: response)) \(httpStatus.statusCode)")
+                    self.presenter?.showAlert("Попробуйте позже")
                 }
                 return
             }
@@ -188,7 +188,7 @@ class TestListInteractor {
             guard let data = data, error == nil else {
                 print("error=\(String(describing: error))")
                 DispatchQueue.main.async {
-                    self.presenter?.showAlert(String(describing: error))
+                    self.presenter?.showAlert("Попробуйте позже")
                 }
                 return
             }
@@ -197,7 +197,7 @@ class TestListInteractor {
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(String(describing: response))")
                 DispatchQueue.main.async {
-                    self.presenter?.showAlert("\(String(describing: response)) \(httpStatus.statusCode)")
+                    self.presenter?.showAlert("Попробуйте позже")
                 }
                 return
             }
@@ -240,7 +240,7 @@ class TestListInteractor {
             guard let data = data, error == nil else {
                 print("error=\(String(describing: error))")
                 DispatchQueue.main.async {
-                    self.presenter?.showAlert(String(describing: error))
+                    self.presenter?.showAlert("Попробуйте позже")
                 }
                 return
             }
@@ -249,7 +249,7 @@ class TestListInteractor {
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(String(describing: response))")
                 DispatchQueue.main.async {
-                    self.presenter?.showAlert("\(String(describing: response)) \(httpStatus.statusCode)")
+                    self.presenter?.showAlert("Попробуйте позже")
                 }
                 return
             }

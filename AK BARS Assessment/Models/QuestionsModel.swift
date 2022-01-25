@@ -32,7 +32,7 @@ struct AnswerModel {
 struct QuestionModel {
     var qid: Int = -1
     var catid: Int = -1
-    var bid: Int = -1
+    var multiChoice: Bool = false
     var question1: String = ""
     var evaluation: Int = -1
     var isValid: Bool = false
@@ -42,8 +42,8 @@ struct QuestionModel {
         if let qid = json["qid"] as? Int {
             self.qid = qid
         }
-        if let bid = json["bid"] as? Int {
-            self.bid = bid
+        if let multiChoice = json["multiChoice"] as? Bool {
+            self.multiChoice = multiChoice
         }
         if let question1 = json["question1"] as? String {
             self.question1 = question1

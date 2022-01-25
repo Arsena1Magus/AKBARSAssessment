@@ -115,7 +115,7 @@ class TakingTestPresenter {
     
     func didSelectRow(_ row: Int, currentStep: Int) {
         if row < allAnswers[currentStep].count {
-            if questions[currentStep].bid != 13 {
+            if !questions[currentStep].multiChoice {
                 for index in 0 ..< allAnswers[currentStep].count {
                     allAnswers[currentStep][index].isValid = false
                 }
@@ -126,7 +126,7 @@ class TakingTestPresenter {
 
             for index in 0 ..< allAnswersExecute.count {
                 if questions[currentStep].qid == allAnswersExecute[index].questionId {
-                    if questions[currentStep].bid != 13 {
+                    if !questions[currentStep].multiChoice {
                         if allAnswers[currentStep][row].aid == allAnswersExecute[index].answerId {
                             allAnswersExecute[index].answerChecked = allAnswersExecute[index].answerChecked == false ? true : false
                         } else {
@@ -191,7 +191,7 @@ class TakingTestPresenter {
     }
     
     func setDescriptionText(_ currentStep: Int) -> String {
-        if questions[currentStep].bid == 12 {
+        if !questions[currentStep].multiChoice {
             return "Выберите один из вариантов ответа"
         }
         return "Выберите один или несколько вариантов ответа"
