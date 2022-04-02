@@ -17,6 +17,8 @@ struct TokenModel {
         }
         if let tokenType = json["token_type"] as? String {
             self.tokenType = tokenType
+        } else {
+            self.tokenType = "Bearer"
         }
     }
 }

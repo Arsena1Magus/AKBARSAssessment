@@ -64,10 +64,8 @@ class TestListInteractor {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
         let parameters: [String: Any] = [
-            "client_id": "xhDXowkusxgW8BrZAN9GZtRngVOX7GER",
-            "client_secret": "-8yzlTSL2UoDdmNgLv0nCIF-YCEG1JSAPSpwB0jRR5_IDxl0ZHmzWGs1iPMW4C4l",
-            "audience": "https://qualification.akbf.ru",
-            "grant_type": "client_credentials"
+            "userName": "kvalinvest",
+            "password": "akbf96321"
         ]
         request.httpBody = makeHttpBody(parameters: parameters)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
