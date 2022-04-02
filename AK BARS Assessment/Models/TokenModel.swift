@@ -12,7 +12,7 @@ struct TokenModel {
     var tokenType: String = ""
     
     init(json: [String: Any]) {
-        if let token = json["access_token"] as? String {
+        if let token = json["token"] as? String {
             self.token = token
         }
         if let tokenType = json["token_type"] as? String {
