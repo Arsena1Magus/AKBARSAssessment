@@ -47,7 +47,9 @@ class TakingTestPresenter {
     
     func showAlert(_ text: String) {
         (parentVC as? TakingTestViewController)?.stopLoader()
-        parentVC.showAlert(title: "Что - то пошло не так", msg: text, buttonText: "Понятно", handler: nil)
+        parentVC.showAlert(title: "Что - то пошло не так", msg: text, buttonText: "Понятно", handler: { [weak self] _ in
+            self?.parentVC.navigationController?.popViewController(animated: true)
+        })
     }
     
     func setResultAnswers(answers: [AnswersResultModel]) {

@@ -14,25 +14,9 @@
             filePath = "AK BARS Assessment/UILayer/TakingTest/Presenter/TakingTestPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "setResultAnswers(answers:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1C2D06E6-1C93-42DC-9284-DE610CF1F893"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AK BARS Assessment/UILayer/Authorization/Interactor/AuthorizationInteractor.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "getSignin(login:password:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

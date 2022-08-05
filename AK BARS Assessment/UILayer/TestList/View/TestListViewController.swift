@@ -29,6 +29,11 @@ class TestListViewController: UIViewController {
     }
     
     private func setupTableView() {
+        #if swift(>=5.5)
+        if #available(iOS 15.0, *) {
+            tableView.sectionHeaderTopPadding = 0.0
+        }
+        #endif
         tableView.delegate = self
         tableView.dataSource = self
         tableView.showsVerticalScrollIndicator = false

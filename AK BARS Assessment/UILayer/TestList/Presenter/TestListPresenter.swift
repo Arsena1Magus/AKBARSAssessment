@@ -19,7 +19,9 @@ class TestListPresenter {
     
     func showAlert(_ text: String) {
         (parentVC as? TestListViewController)?.stopLoader()
-        parentVC.showAlert(title: "Что - то пошло не так", msg: text, buttonText: "Понятно", handler: nil)
+        parentVC.showAlert(title: "Что - то пошло не так", msg: text, buttonText: "Понятно", handler: { [weak self] _ in
+            self?.parentVC.navigationController?.popViewController(animated: true)
+        })
     }
     
     func didSelectRow(_ row: Int) {
